@@ -1,0 +1,45 @@
+﻿@model IEnumerable<mvcEF.Models.Cart>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Carts</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Accessories.Name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.computer.IDComputer)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Peripheral.Name)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Accessories.Name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.computer.IDComputer)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Peripheral.Name)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.IDCart }) |
+            @Html.ActionLink("Details", "Details", new { id=item.IDCart }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.IDCart })
+        </td>
+    </tr>
+}
+
+</table>

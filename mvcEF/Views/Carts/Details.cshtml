@@ -1,0 +1,42 @@
+﻿@model mvcEF.Models.Cart
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Cart</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Accessories.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Accessories.Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.computer.IDComputer)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.computer.IDComputer)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Peripheral.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Peripheral.Name)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.IDCart }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

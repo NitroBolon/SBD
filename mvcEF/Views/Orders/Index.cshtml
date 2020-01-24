@@ -1,0 +1,51 @@
+﻿@model IEnumerable<mvcEF.Models.Order>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Orders</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.cart.IDCart)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.client.Name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.delivery.Name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.orderDate)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.cart.IDCart)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.client.Name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.delivery.Name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.orderDate)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.IDOrder }) |
+            @Html.ActionLink("Details", "Details", new { id=item.IDOrder }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.IDOrder })
+        </td>
+    </tr>
+}
+
+</table>

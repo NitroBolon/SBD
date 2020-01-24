@@ -1,0 +1,88 @@
+﻿@model mvcEF.Models.Computer
+
+@{
+    ViewBag.Title = "Create";
+}
+
+<h2>Create</h2>
+
+
+@using (Html.BeginForm()) 
+{
+    @Html.AntiForgeryToken()
+    
+    <div class="form-horizontal">
+        <h4>Computer</h4>
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        <div class="form-group">
+            @Html.LabelFor(model => model.IDCasing, "IDCasing", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.DropDownList("IDCasing", null, htmlAttributes: new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.IDCasing, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.IDPowerSupply, "IDPowerSupply", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.DropDownList("IDPowerSupply", null, htmlAttributes: new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.IDPowerSupply, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.IDMotherboard, "IDMotherboard", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.DropDownList("IDMotherboard", null, htmlAttributes: new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.IDMotherboard, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.IDProcessor, "IDProcessor", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.DropDownList("IDProcessor", null, htmlAttributes: new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.IDProcessor, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.IDGraphicsCard, "IDGraphicsCard", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.DropDownList("IDGraphicsCard", null, htmlAttributes: new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.IDGraphicsCard, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.IDCooler, "IDCooler", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.DropDownList("IDCooler", null, htmlAttributes: new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.IDCooler, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.IDRAM, "IDRAM", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.DropDownList("IDRAM", null, htmlAttributes: new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.IDRAM, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Create" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}
